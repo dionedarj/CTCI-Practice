@@ -22,7 +22,12 @@ public class App {
         dfsArray[7].addNeighbor(dfsArray[10]);
         dfsArray[8].addNeighbor(dfsArray[15]);
         dfsArray[12].addNeighbor(dfsArray[13]);
-        dfsArray[11].addNeighbor(dfsArray[9]);
+        dfsArray[11].addNeighbor(dfsArray[12]);
+        dfsArray[15].addNeighbor(dfsArray[18]);
+        dfsArray[18].addNeighbor(dfsArray[19]);
+        dfsArray[10].addNeighbor(dfsArray[5]);
+        dfsArray[18].addNeighbor(dfsArray[11]);
+
 
         DFS dfs = new DFS(dfsArray[0]);
         System.out.println("Found value:" + dfs.find(11).value);
