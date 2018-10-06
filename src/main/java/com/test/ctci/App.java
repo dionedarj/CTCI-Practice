@@ -1,8 +1,23 @@
 package com.test.ctci;
 
+import java.util.Arrays;
+
 public class App {
     public static void main( String[] args ) {
+        QuickSortTest();
 
+    }
+
+    static void QuickSortTest() {
+        int[] toSort = {-3, -5, 20, 18, -30, 23, 100, -500, 70, 60, 238, -45};
+        System.out.println("Before Sorting: ");
+        System.out.println(Arrays.toString(toSort));
+        QuickSort.sort(toSort, 0, toSort.length - 1);
+        System.out.println("After Sorting: ");
+        System.out.println(Arrays.toString(toSort));
+    }
+
+    static void BFSTest() {
         SearchNode[] sNodeArray = new SearchNode[20];
         for (int i = 0; i < sNodeArray.length; i++) {
             sNodeArray[i] = new SearchNode(i);
