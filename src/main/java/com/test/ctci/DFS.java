@@ -3,18 +3,18 @@ package com.test.ctci;
 import java.util.*;
 
 public class DFS {
-    public DFSNode root;
-    public Stack<DFSNode> stack;
-    public Set<DFSNode> visited;
-    public DFS(DFSNode root) {
+    public SearchNode root;
+    public Stack<SearchNode> stack;
+    public Set<SearchNode> visited;
+    public DFS(SearchNode root) {
         this.root = root;
         stack = new Stack<>();
         visited = new HashSet<>();
     }
 
-    public DFSNode find(int value) {
+    public SearchNode find(int value) {
         stack.push(root);
-        DFSNode temp = root;
+        SearchNode temp = root;
         while (temp.value != value && !stack.empty()) {
             temp = stack.pop();
             if (temp.value == value) {
@@ -23,7 +23,7 @@ public class DFS {
             if (!visited.contains(temp)) {
                 System.out.println("Visiting node with value: " + temp.value);
                 visited.add(temp);
-                for (DFSNode d: temp.neighbors) {
+                for (SearchNode d: temp.neighbors) {
                     stack.push(d);
                 }
             }
@@ -31,18 +31,4 @@ public class DFS {
         return null;
     }
 
-}
-
-class DFSNode {
-    public int value;
-    public Set<DFSNode> neighbors;
-    public DFSNode(int value) {
-        this.value = value;
-        neighbors = new HashSet<>();
-    }
-
-    public void addNeighbor(DFSNode node) {
-        neighbors.add(node);
-        node.neighbors.add(this);
-    }
 }
