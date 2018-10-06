@@ -4,8 +4,16 @@ import java.util.Arrays;
 
 public class App {
     public static void main( String[] args ) {
-        QuickSortTest();
+        MergeSortTest();
+    }
 
+    static void MergeSortTest() {
+        int[] toSort = {100, 50, 20, -30, -40, -10, 30, 85, -23, 8, 1, 12, -50, 500, -500};
+        System.out.println("Before Sorting: ");
+        System.out.println(Arrays.toString(toSort));
+        MergeSort.sort(toSort, 0, toSort.length - 1);
+        System.out.println("After Sorting: ");
+        System.out.println(Arrays.toString(toSort));
     }
 
     static void QuickSortTest() {
